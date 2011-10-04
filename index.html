@@ -20,10 +20,103 @@
 
     <section class='slides layout-regular template-default'>
       <article>
-        <h1>This is the first slide.</h1>
+        <h1>How Browsers Work</h1>
+        <h3>Ehsan Akhgari</h3>
+        <h3>Mozilla Corporation</h3>
       </article>
       <article>
-        <h3>This is the next slide.</h3>
+        <h3>Overview</h3>
+        <ul>
+          <li>Describing the internals of a web browser
+          <li>Some of the challenges on implementing a browser
+          <li>Some of the interesting stuff people are working on today
+          <li>Some of the interesting future directions
+      </article>
+      <article>
+        <h3>First things first</h3>
+        <ul>
+          <li>Focused on things common between the browser engines
+            <ul>
+              <li>Gecko (used in Firefox, Thunderbird, etc.)
+              <li>WebKit (used in Chrome, Safari, etc.)
+              <li>Trident (used in IE, etc.)
+              <li>Presto (used in Opera, etc.)
+          </li>
+      </article>
+      <article>
+        <h3>How browsers work: bird's-eye view</h3>
+        <svg width="720" height="600">
+         <defs>
+          <marker id="se_marker_start_svg_25" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5" markerHeight="5" refX="50" refY="50">
+           <path id="svg_15" d="m0,50l100,40l-30,-40l30,-40l-100,40z" fill="#000000" stroke="#000000" stroke-width="10"/>
+          </marker>
+          <marker id="se_marker_end_svg_26" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5" markerHeight="5" refX="50" refY="50">
+           <path id="svg_24" d="m100,50l-100,40l30,-40l-30,-40l100,40z" fill="#000000" stroke="#000000" stroke-width="10"/>
+          </marker>
+
+         </defs>
+         <g>
+          <rect id="svg_1" height="95" width="317" y="201" x="197" stroke="#000000" fill="#018ec1"/>
+          <rect height="95" width="317" y="336.5" x="197" stroke="#000000" fill="#018ec1" id="svg_6"/>
+          <rect height="95" width="317" y="470.5" x="197" stroke="#000000" fill="#018ec1" id="svg_7"/>
+          <g id="svg_17">
+           <rect height="95" width="317" y="201" x="197" stroke="#000000" fill="#018ec1" id="svg_8"/>
+
+           <text fill="#ffffff" stroke="#000000" stroke-width="0" x="355.5" y="259" id="svg_16" font-size="40" font-family="Sans-serif" text-anchor="middle" xml:space="preserve">Communication</text>
+          </g>
+          <g id="svg_20">
+           <rect height="95" width="317" y="336.5" x="197" stroke="#000000" fill="#018ec1" id="svg_13"/>
+           <text fill="#ffffff" stroke="#000000" stroke-width="0" x="355.5" y="394.5" id="svg_18" font-size="40" font-family="Sans-serif" text-anchor="middle" xml:space="preserve">Processing</text>
+          </g>
+          <g id="svg_22">
+           <g id="svg_5">
+
+            <ellipse fill="#9ee6ff" stroke="#000000" stroke-width="0" cx="291" cy="95" id="svg_2" rx="77" ry="61"/>
+            <ellipse fill="#9ee6ff" stroke="#000000" stroke-width="0" cx="376" cy="68" rx="77" ry="61" id="svg_3"/>
+            <ellipse fill="#9ee6ff" stroke="#000000" stroke-width="0" cx="411" cy="106" rx="77" ry="61" id="svg_4"/>
+           </g>
+           <g id="svg_9">
+            <ellipse fill="#9ee6ff" stroke="#000000" stroke-width="0" cx="295.5" cy="95" rx="77" ry="61" id="svg_10"/>
+            <ellipse fill="#9ee6ff" stroke="#000000" stroke-width="0" cx="380.5" cy="68" rx="77" ry="61" id="svg_11"/>
+            <ellipse fill="#9ee6ff" stroke="#000000" stroke-width="0" cx="415.5" cy="106" rx="77" ry="61" id="svg_12"/>
+           </g>
+
+           <text fill="#000000" stroke="#000000" stroke-width="0" x="355.5" y="97.5" id="svg_21" font-size="40" font-family="Sans-serif" text-anchor="middle" xml:space="preserve">Cloud</text>
+          </g>
+          <g id="svg_23">
+           <rect height="95" width="317" y="470.5" x="197" stroke="#000000" fill="#018ec1" id="svg_14"/>
+           <text fill="#ffffff" stroke="#000000" stroke-width="0" x="355.5" y="528.5" id="svg_19" font-size="40" font-family="Sans-serif" text-anchor="middle" xml:space="preserve">Presentation</text>
+          </g>
+          <g id="svg_27">
+           <line fill="none" stroke="#000000" stroke-width="5" x1="291" y1="164" x2="290" y2="211" id="svg_25" marker-start="url(#se_marker_start_svg_25)"/>
+
+           <line fill="none" stroke="#000000" stroke-width="5" x1="422" y1="153" x2="421" y2="200" id="svg_26" marker-end="url(#se_marker_end_svg_26)"/>
+          </g>
+          <g id="svg_28">
+           <line fill="none" stroke="#000000" stroke-width="5" x1="291" y1="300" x2="290" y2="347" marker-start="url(#se_marker_start_svg_25)" id="svg_29"/>
+           <line fill="none" stroke="#000000" stroke-width="5" x1="422" y1="289" x2="421" y2="336" marker-end="url(#se_marker_end_svg_26)" id="svg_30"/>
+          </g>
+          <g id="svg_34">
+           <line fill="none" stroke="#000000" stroke-width="5" x1="291" y1="435" x2="290" y2="482" marker-start="url(#se_marker_start_svg_25)" id="svg_35"/>
+           <line fill="none" stroke="#000000" stroke-width="5" x1="422" y1="424" x2="421" y2="471" marker-end="url(#se_marker_end_svg_26)" id="svg_36"/>
+
+          </g>
+         </g>
+        </svg>
+      </article>
+      <article>
+        <h3>Communication layer</h3>
+        <ul>
+          <li>Also known as the network layer
+          <li>The input is a URI, the output is usually a stream of bytes
+          <li>Mostly consisting of
+            <ul>
+              <li>A URI parser
+              <li>Implementations of web protocols (HTTP, FTP, etc.)
+              <li>A local file system access layer
+              <li>Encryption facilities for secure communications
+              <li>In-memory and on-disk caches to make network access faster
+          </li>
       </article>
   </body>
 </html>
