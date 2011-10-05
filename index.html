@@ -118,6 +118,192 @@
               <li>In-memory and on-disk caches to make network access faster
           </li>
       </article>
+      <article>
+        <h3>Processing layer</h3>
+        <ul>
+          <li>Most of the &quot;meet&quot; is here!
+          <li>Things like <em>HTML</em>, <em>CSS</em>, <em>Javascript</em>, etc. live here
+          <li>Input is a stream of bytes and some metadata, output is some form of
+              presentation (hint: <em>not</em> always a rendering on the screen)
+          <li>Typically asks the communications layer for some more URIs to be loaded
+          <li>Another input source comes from the presentation layer
+              (e.g., mouse clicks, keyboard input, etc.)
+      </article>
+      <article>
+        <h3>A picture says&hellip;</h3>
+        <svg width="720" height="600" xmlns="http://www.w3.org/2000/svg">
+         <defs>
+          <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_85">
+           <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+          </marker>
+          <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_84">
+           <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+          </marker>
+
+          <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_87">
+           <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+          </marker>
+          <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_88">
+           <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+          </marker>
+          <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_90">
+           <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+          </marker>
+
+          <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_92">
+           <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+          </marker>
+          <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_94">
+           <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+          </marker>
+          <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_100">
+           <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+          </marker>
+
+          <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_101">
+           <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+          </marker>
+          <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_102">
+           <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+          </marker>
+          <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_103">
+           <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+          </marker>
+
+         </defs>
+         <g>
+          <g id="svg_62">
+           <path id="svg_57" d="m101.357407,562.333984l20.000793,-66.671021l80.003128,0l-20.000778,66.671021l-80.003143,0z" stroke="#000000" fill="#003f7f"/>
+           <g id="svg_61">
+            <text id="svg_59" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" y="524.5" x="151.357422" stroke-width="0" stroke="#000000" fill="#ffffff">Render</text>
+            <text id="svg_60" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" y="544.5" x="151.357422" stroke-width="0" stroke="#000000" fill="#ffffff">Tree</text>
+
+           </g>
+          </g>
+          <g id="svg_77">
+           <g id="svg_55">
+            <path id="svg_53" d="m87.46991,411.001251l127.781738,0l0,47.502594l-127.781738,0l0,-47.502594zm15.973419,-47.501556l0,47.501556m95.834885,-47.501556l0,47.501556" stroke="#000000" fill="#ffffaa"/>
+            <text transform="matrix(1.43928, 0, 0, 1.22185, -48.1494, -85.6418)" id="svg_54" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" y="432.281474" x="138.619609" stroke-width="0" stroke="#000000" fill="#000000">Layout</text>
+           </g>
+           <g id="svg_49">
+
+            <path id="svg_35" d="m150.999985,364.585968l20.000793,-66.671051l80.003128,0l-20.000793,66.671051l-80.003128,0z" stroke="#000000" fill="#003f7f"/>
+            <g id="svg_48">
+             <text id="svg_36" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" y="326.751953" x="201.003906" stroke-width="0" stroke="#000000" fill="#ffffff">Style</text>
+             <text id="svg_37" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" y="346.751953" x="201.003906" stroke-width="0" stroke="#000000" fill="#ffffff">Rules</text>
+            </g>
+           </g>
+           <g id="svg_51">
+            <path id="svg_30" d="m51.716785,364.585968l20.00079,-66.671051l80.003128,0l-20.000778,66.671051l-80.003139,0z" stroke="#000000" fill="#003f7f"/>
+
+            <g id="svg_50">
+             <text xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" id="svg_33" y="326.751953" x="101.716797" stroke-width="0" stroke="#000000" fill="#ffffff">DOM</text>
+             <text id="svg_34" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" y="346.751953" x="101.716797" stroke-width="0" stroke="#000000" fill="#ffffff">Tree</text>
+            </g>
+           </g>
+          </g>
+          <g id="svg_78">
+           <g id="svg_20">
+
+            <path id="svg_17" d="m46.666058,125.007095l88.78159,0l0,49.502609l-88.78159,0l0,-49.502609zm11.098186,-49.501549l0,49.501549m66.585213,-49.501549l0,49.501549" stroke="#000000" fill="#ffffaa"/>
+            <text xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" id="svg_19" y="155.902344" x="91.058594" stroke-width="0" stroke="#000000" fill="#000000">Parser</text>
+           </g>
+           <g id="svg_16">
+            <path id="svg_1" d="m56.076752,19.422462l69.963593,0l0,56.863022c-34.981926,0 -34.981926,21.665634 -69.963593,9.35569l0,-66.218712z" stroke="#000000" fill="#ffffaa"/>
+            <text xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="40" id="svg_2" y="64.925781" x="91.058594" stroke-width="0" stroke="#000000" fill="#ffffff"/>
+            <text xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" id="svg_3" y="59.925781" x="91.058594" stroke-width="0" stroke="#000000" fill="#000000">HTML</text>
+           </g>
+
+          </g>
+          <g id="svg_79">
+           <g id="svg_21">
+            <path id="svg_22" d="m162.607468,125.001236l88.78157,0l0,49.502609l-88.78157,0l0,-49.502609zm11.09819,-49.501549l0,49.501549m66.585205,-49.501549l0,49.501549" stroke="#000000" fill="#ffffaa"/>
+            <text id="svg_23" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" y="155.896484" x="207" stroke-width="0" stroke="#000000" fill="#000000">Parser</text>
+           </g>
+           <g id="svg_15">
+            <path id="svg_4" d="m172.018158,19.420509l69.963593,0l0,56.863022c-34.981934,0 -34.981934,21.665634 -69.963593,9.35569l0,-66.218712z" stroke="#000000" fill="#ffffaa"/>
+
+            <text id="svg_5" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="40" y="64.923828" x="207" stroke-width="0" stroke="#000000" fill="#ffffff"/>
+            <text id="svg_6" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" y="59.923828" x="207" stroke-width="0" stroke="#000000" fill="#000000">CSS</text>
+           </g>
+          </g>
+          <g id="svg_80">
+           <g id="svg_24">
+            <path id="svg_25" d="m382.609406,125.001236l88.781586,0l0,49.502609l-88.781586,0l0,-49.502609zm11.098206,-49.501549l0,49.501549m66.585205,-49.501549l0,49.501549" stroke="#000000" fill="#ffffaa"/>
+            <text id="svg_26" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" y="155.896484" x="427.001953" stroke-width="0" stroke="#000000" fill="#000000">Parser</text>
+
+           </g>
+           <g id="svg_14">
+            <path id="svg_7" d="m392.020142,19.420502l69.963562,0l0,56.863037c-34.981934,0 -34.981934,21.665619 -69.963562,9.355682l0,-66.218719z" stroke="#000000" fill="#ffffaa"/>
+            <text id="svg_8" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="40" y="64.923828" x="427.001953" stroke-width="0" stroke="#000000" fill="#ffffff"/>
+            <text id="svg_9" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" y="59.923828" x="427.001953" stroke-width="0" stroke="#000000" fill="#000000">JS</text>
+           </g>
+          </g>
+          <g id="svg_81">
+
+           <g id="svg_75">
+            <path id="svg_28" d="m576.802734,125.001236l88.781616,0l0,49.502609l-88.781616,0l0,-49.502609zm11.098267,-49.501549l0,49.501549m66.585205,-49.501549l0,49.501549" stroke="#000000" fill="#ffffaa"/>
+            <text id="svg_29" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" y="155.896484" x="621.195313" stroke-width="0" stroke="#000000" fill="#000000">Decoder</text>
+           </g>
+           <g id="svg_13">
+            <path id="svg_10" d="m586.213501,19.420502l69.963562,0l0,56.863037c-34.981934,0 -34.981934,21.665619 -69.963562,9.355682l0,-66.218719z" stroke="#000000" fill="#ffffaa"/>
+            <text id="svg_11" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="40" y="64.923828" x="621.195313" stroke-width="0" stroke="#000000" fill="#ffffff"/>
+            <text id="svg_12" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" y="59.923828" x="621.195313" stroke-width="0" stroke="#000000" fill="#000000">Media</text>
+
+           </g>
+          </g>
+          <g id="svg_82">
+           <g id="svg_74">
+            <path id="svg_68" d="m582.414063,311.999268l88.781616,0l0,49.502625l-88.781616,0l0,-49.502625zm11.098267,-49.501526l0,49.501526m66.585205,-49.501526l0,49.501526" stroke="#000000" fill="#ffffaa"/>
+            <g id="svg_73">
+             <text id="svg_69" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" y="331.5" x="625.806641" stroke-width="0" stroke="#000000" fill="#000000">Post-</text>
+             <text id="svg_72" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" y="351.5" x="625.806641" stroke-width="0" stroke="#000000" fill="#000000">process</text>
+
+            </g>
+           </g>
+           <g id="svg_45">
+            <path id="svg_41" d="m576.804688,272.334015l20.000793,-66.671036l80.003113,0l-20.000793,66.671036l-80.003113,0z" stroke="#000000" fill="#003f7f"/>
+            <g id="svg_44">
+             <text id="svg_42" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="18" y="233.5" x="626.808594" stroke-width="0" stroke="#000000" fill="#ffffff">Decoded</text>
+             <text id="svg_43" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" y="253.5" x="626.808594" stroke-width="0" stroke="#000000" fill="#ffffff">Media</text>
+            </g>
+
+           </g>
+          </g>
+          <g id="svg_83">
+           <g id="svg_66">
+            <path id="svg_64" d="m382.611359,316.999268l88.781586,0l0,49.502625l-88.781586,0l0,-49.502625zm11.098206,-49.501526l0,49.501526m66.585205,-49.501526l0,49.501526" stroke="#000000" fill="#ffffaa"/>
+            <text id="svg_65" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" y="347.894531" x="427.003906" stroke-width="0" stroke="#000000" fill="#000000">Execution</text>
+           </g>
+           <g id="svg_47">
+
+            <path id="svg_38" d="m377,277.334015l20.000793,-66.671036l80.003113,0l-20.000793,66.671036l-80.003113,0z" stroke="#000000" fill="#003f7f"/>
+            <g id="svg_46">
+             <text id="svg_39" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" y="239.5" x="427.003906" stroke-width="0" stroke="#000000" fill="#ffffff">JS</text>
+             <text id="svg_40" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" y="259.5" x="427.003906" stroke-width="0" stroke="#000000" fill="#ffffff">IR</text>
+            </g>
+           </g>
+          </g>
+          <line stroke-width="2" marker-end="url(#se_marker_end_svg_84)" id="svg_84" y2="293.333335" x2="110" y1="175" x1="89" stroke="#000000" fill="none"/>
+
+          <line stroke-width="2" marker-end="url(#se_marker_end_svg_85)" id="svg_85" y2="292.666667" x2="204" y1="175" x1="209" stroke="#000000" fill="none"/>
+          <line marker-end="url(#se_marker_end_svg_87)" id="svg_87" y2="207" x2="431.75" y1="173.75" x1="429.75" stroke-width="2" stroke="#000000" fill="none"/>
+          <line marker-end="url(#se_marker_end_svg_88)" id="svg_88" y2="201.249999" x2="630.75" y1="174.749999" x1="626" stroke-width="2" stroke="#000000" fill="none"/>
+          <path marker-end="url(#se_marker_end_svg_90)" d="m379.131866,333.048279c-1.740997,-1.356689 -4.062653,-2.687164 -7.678101,-5.18811c-5.176544,-3.58078 -10.557373,-7.263275 -17.275696,-12.451355c-6.718323,-5.188019 -11.438721,-9.454895 -15.356171,-12.451324c-5.649872,-4.321594 -10.777039,-8.020355 -15.356201,-12.451355c-5.056854,-4.89325 -9.992004,-10.056946 -14.396423,-13.488983c-3.482025,-2.713226 -9.0867,-7.031006 -14.396423,-10.376129c-4.465576,-2.813293 -9.822205,-5.699524 -14.396423,-8.300903c-3.062592,-1.741699 -7.656372,-4.249466 -11.517151,-5.188034c-4.774597,-1.160751 -8.549347,-2.590134 -12.476868,-3.112869c-3.810287,-0.507111 -7.684311,-1.273605 -11.517136,-1.037582c-67.51123,4.15715 -68.808609,9.81459 -70.062592,10.376114c-48.545822,29.656189 -49.907593,30.090759 -50.867363,31.128387c-0.959755,1.037628 -1.919518,2.075195 -2.879288,3.112823l0,1.037659" id="svg_90" stroke-width="2" stroke="#000000" fill="none"/>
+          <path marker-end="url(#se_marker_end_svg_92)" d="m382,348c0,-1 -2.132996,-1.570007 -6,-3c-4.194,-1.552002 -9.889008,-5.194 -15,-8c-5.880005,-3.227997 -10,-6 -13,-9c-3,-3 -5.730011,-7.229004 -10,-12c-3.77301,-4.214996 -6,-6 -9,-9c-3,-3 -5,-5 -8,-8c-3,-3 -4.881989,-5.190002 -8,-7c-1.93399,-1.122009 -4.078003,-1.790009 -7,-3c-2.06601,-0.855988 -5.712006,-2.981995 -11,-4c-3.928009,-0.756012 -9.015015,-0.70401 -12,-1c-5.074005,-0.502014 -8.824005,-1.485992 -11,-2c-10.705994,-2.527008 -15,0 -19,0c-2,0 -3,0 -4,0c-1,0 -2,0 -4,0c-1,0 -3.076004,0.617004 -4,1c-1.307007,0.540985 -2,2 -3,3c-1,1 -1.617004,2.075989 -2,3c-0.541,1.307007 -2,2 -3,2l-1,1" id="svg_92" stroke-width="2" stroke="#000000" fill="none"/>
+          <line marker-end="url(#se_marker_end_svg_94)" id="svg_94" y2="495" x2="157" y1="459" x1="154" stroke-width="2" stroke="#000000" fill="none"/>
+          <g id="svg_99">
+           <path id="svg_95" d="m445.986359,490.392395l21.665375,-42.499786l86.668945,0c11.967102,0 21.665283,19.026581 21.665283,42.499786c0,23.47345 -9.698181,42.500183 -21.665283,42.500183l-86.668945,0l-21.665375,-42.500183z" stroke-width="2" stroke="#000000" fill="#ffd4aa"/>
+           <text xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="20" id="svg_98" y="495.892578" x="510.986328" stroke-width="0" stroke="#000000" fill="#000000">Presentation</text>
+
+          </g>
+          <line marker-end="url(#se_marker_end_svg_100)" id="svg_100" y2="492" x2="445" y1="532" x1="191" stroke-width="2" stroke="#000000" fill="none"/>
+          <line marker-end="url(#se_marker_end_svg_101)" id="svg_101" y2="448" x2="560" y1="362" x1="628" stroke-width="2" stroke="#000000" fill="none"/>
+          <line marker-end="url(#se_marker_end_svg_102)" id="svg_102" y2="339" x2="581" y1="341" x1="472" stroke-width="2" stroke="#000000" fill="none"/>
+          <path marker-end="url(#se_marker_end_svg_103)" d="m216,437c1,0 3,0 5,0c4,0 8.990845,0.106476 20,1c13.98967,1.135406 31.003723,2.921234 53,4c19.003448,0.931976 34,1 48,1c14,0 28,0 39,0c10,0 19.990448,-0.090027 29,-1c10.989441,-1.109924 20.993347,-2.05481 29,-3c8.99295,-1.061615 17.126678,-2.548309 25,-5c8.157654,-2.540222 14.141846,-5.761414 21,-10c6.134125,-3.791107 13.184906,-6.857513 17,-12c3.208557,-4.324951 5.288574,-8.868286 7,-13c1.210144,-2.92157 1.51944,-5.038727 2,-8c0.506531,-3.121429 3.398987,-7.898102 5,-15c1.337646,-5.933868 1.587585,-13.017029 2,-18c0.501709,-6.062042 1.806152,-13.030426 3,-20c1.721802,-10.051636 3.929871,-20.009064 5,-28c0.938538,-7.008514 2,-12 2,-16c0,-2 0,-3 0,-5c0,-2 -0.765381,-4.152252 0,-6c0.541199,-1.306549 0.610657,-3.159271 2,-6c1.584106,-3.238922 2.705444,-6.346191 5,-8c1.813965,-1.307465 2.852722,-2.173096 4,-3c1.813965,-1.307465 4.309998,-1.337494 7,-3c1.203003,-0.7435 2.87854,-2.493469 6,-3c1.974182,-0.320374 6,-1 8,-1c1,0 2,0 3,0c2,0 2.82373,-0.486267 5,-1c1.946472,-0.459503 3,0 4,0c1,0 3,0 4,0l1,0l1,0" id="svg_103" stroke-width="2" stroke="#000000" fill="none"/>
+         </g>
+        </svg>
+      </article>
   </body>
 </html>
     
