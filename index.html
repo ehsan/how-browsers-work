@@ -304,6 +304,203 @@
          </g>
         </svg>
       </article>
+      <article>
+        <h3>&hellip; more than a thousand words?</h3>
+        <ul>
+          <li>Well, that picture doesn't!
+          <li>This is an oversimplified model of how the engine works
+          <li>Let's get started with parsing HTML
+      </article>
+      <article>
+        <h3>Parsing HTML</h3>
+        <ul>
+          <li>Keyword here: HTML5
+          <li>Everything is HTML5
+          <li>No malformed documents
+          <li>Handling older content: quirks mode
+          <li>HTML documents can point to other resources to load from the network
+            <ul>
+              <li>Images
+              <li>Scripts
+              <li>Stylesheets
+                <ul>
+                  <li>More stylesheets
+                </ul>
+              <li>etc.
+      </article>
+      <article>
+        <h3>Document Object Model (DOM)</h3>
+        <ul>
+          <li>HTML documents = Tree structures
+          <li>Example:
+        </ul>
+        <pre>&lt;html&gt;&lt;body&gt;&lt;div&gt;hello&lt;/div&gt;world&lt;/body&gt;&lt;/html&gt;</pre>
+        <svg width="300" height="380">
+         <g>
+          <title>Layer 1</title>
+          <g id="svg_17">
+           <ellipse ry="25" rx="59" id="svg_1" cy="45" cx="71" stroke="#000000" fill="#ffaaaa"/>
+           <text xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_6" y="51" x="71" stroke-width="0" stroke="#000000" fill="#000000">html</text>
+
+          </g>
+          <g id="svg_18">
+           <ellipse id="svg_7" ry="25" rx="59" cy="103" cx="121" stroke="#000000" fill="#ffaaaa"/>
+           <text id="svg_8" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" y="109" x="121" stroke-width="0" stroke="#000000" fill="#000000">head</text>
+          </g>
+          <g id="svg_19">
+           <ellipse id="svg_9" ry="25" rx="59" cy="162" cx="121" stroke="#000000" fill="#ffaaaa"/>
+           <text id="svg_10" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" y="168" x="121" stroke-width="0" stroke="#000000" fill="#000000">body</text>
+
+          </g>
+          <g id="svg_20">
+           <ellipse id="svg_11" ry="25" rx="59" cy="221" cx="171" stroke="#000000" fill="#ffaaaa"/>
+           <text id="svg_12" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" y="227" x="171" stroke-width="0" stroke="#000000" fill="#000000">div</text>
+          </g>
+          <g id="svg_21">
+           <ellipse id="svg_13" ry="25" rx="59" cy="336" cx="171" stroke="#000000" fill="#3f7f00"/>
+           <text id="svg_14" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" y="342" x="171" stroke-width="0" stroke="#000000" fill="#000000">"world"</text>
+
+          </g>
+          <g id="svg_22">
+           <ellipse id="svg_15" ry="25" rx="59" cy="278" cx="231" stroke="#000000" fill="#3f7f00"/>
+           <text id="svg_16" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" y="284" x="231" stroke-width="0" stroke="#000000" fill="#000000">"world"</text>
+          </g>
+          <g id="svg_26">
+           <line id="svg_24" y2="162.567267" x2="11.75" y1="45" x1="11.75" stroke="#b2b2b2" fill="none"/>
+           <line id="svg_23" y2="104" x2="11.742272" y1="104" x1="62" stroke="#b2b2b2" fill="none"/>
+
+           <line id="svg_25" y2="163" x2="11.742272" y1="163" x1="62" stroke="#b2b2b2" fill="none"/>
+          </g>
+          <line id="svg_28" y2="335.817682" x2="61.628906" y1="162.750003" x1="61.628906" stroke="#b2b2b2" fill="none"/>
+          <line id="svg_29" y2="221.75" x2="61.621178" y1="221.75" x1="111.878906" stroke="#b2b2b2" fill="none"/>
+          <line id="svg_30" y2="279.25" x2="61.621283" y1="279.25" x1="171.878915" stroke="#b2b2b2" fill="none"/>
+          <line id="svg_31" y2="336.5" x2="61.621178" y1="336.5" x1="111.878906" stroke="#b2b2b2" fill="none"/>
+         </g>
+        </svg>
+      </article>
+      <article>
+        <h3>More DOM&hellip;</h3>
+        <ul>
+          <li>The browser uses the DOM for everything
+          <li>The original HTML document is thrown away (well, for the most part) after parsing
+          <li>The browser can't wait for the whole document before it starts parsing
+          <li>Sometimes the browser needs to &quot;wait&quot; for something before it can continue parsing (more on that later)
+          <li>The DOM is exposed to web page authors, as we'll see later
+      </article>
+      <article>
+        <h3>Cascading Style Sheets (CSS)</h3>
+        <ul>
+          <li>Specifies how elements should appear in the output
+          <li>Common CSS properties: <code>color</code>, <code>font</code>, <code>border</code>, etc.
+          <li>Example:
+            <pre class="lang-css">div {
+  color: red;
+}
+
+p {
+  font: serif;
+  border: thick solid blue;
+}</pre>
+          </li>
+          <li>Result of parsing: a set of style rules
+          <li>Note that they're not going to be useful yet!
+      </article>
+      <article>
+        <h3>Layout</h3>
+        <ul>
+          <li>This is a large portion of what browser engines do: figuring out where and how to display stuff
+          <li>The output of this phase is passed to the presentation layer
+      </article>
+      <article>
+        <h3>Making sense of CSS</h3>
+        <ul>
+          <li>The first thing that the layout process does is to determine what styles apply to a node in the DOM tree
+          <li>Two phases:
+            <ul>
+              <li>Selector matching
+              <li>Style resolution
+            </ul>
+          <li>After this, we know about all of the styles applying to an element
+      </article>
+      <article>
+        <h3>Data structures for layout</h3>
+        <ul>
+          <li>Typically, web browsers create some sort of a tree in order to determine the presentation of the DOM tree in face of the existing style rules
+          <li>This tree is internal to the browser engine
+          <li>A good way of thinking about the elements in this tree is to think of rectangular regions of a page
+          <li>Demo time!
+      </article>
+      <article>
+        <h3>More about the layout tree</h3>
+        <ul>
+          <li>There's usually a one to many mapping from a node in the DOM tree to rectangular areas
+          <li>Not all elements in the DOM tree affect the rendering
+          <li>CSS tells us which ones do, and how
+          <li>We need to compute the visual properties for each area, such as dimensions, background color, border, etc.
+          <li>The layout tree may not be very similar to the DOM tree
+          <li>Once we finish building this tree, we have an idea of the page will &quot;look&quot;
+      </article>
+      <article>
+        <h3>What about things other than HTML?</h3>
+        <ul>
+          <li>Typical browsers today are capable of displaying:
+            <ul>
+              <li>Images (static and animated)
+              <li>Video
+              <li>Audio
+              <li>Fonts
+            </ul>
+          <li>The browser needs to decode them
+          <li>It might post-process them
+          <li>The layout process may use these resources (for example, to compute the dimensions of an image)
+      </article>
+      <article>
+        <h3>Javascript</h3>
+        <ul>
+          <li>One of the complex pieces of a browser engine
+          <li>It's a programming language
+          <li>Which means that your browser has a &quot;compiler&quot; inside it
+          <li>Different Javascript engines work in drastically different ways
+          <li>Highly competitive area today
+      </article>
+      <article>
+        <h3>How does my JS code run?</h3>
+        <ul>
+          <li>Typically, here's how a Javascript engine runs a program
+            <ul>
+              <li>Parse the source code into some intermediate format
+              <li>(Optional step:) analyze the code to gather useful information from it
+              <li>Generate runnable code
+                <ul>
+                  <li>Bytecode
+                  <li>Native machine code (Just-in-time compilation)
+                </ul>
+              <li>Run it
+              <li>Modify the generated code if needed
+            </ul>
+          <li>Lots of details here to take care of
+      </article>
+      <article>
+        <h3>JS meets DOM</h3>
+        <ul>
+          <li>The DOM tree is exposed to the Javascript code running on the page
+          <li>The Javascript code can ask for information from the DOM tree
+          <li>The Javascript code can <em>modify</em> the information in the DOM tree
+          <li>The Javascript code can call predefined function on the nodes in the DOM tree in order to do useful things
+            <ul>
+              <li>Also known as the DOM API
+            </ul>
+          <li>The modification needs to be reflected in the presentation layer
+          <li>You are seeing a live demo of this happening in these slides <code>:-)</code>
+      </article>
+      <article>
+        <h3>Dynamic modifications</h3>
+        <ul>
+          <li>The browser engines keep track of the state of everything in the DOM tree
+          <li>A change in the DOM tree may or may not change the output in the presentation layer
+          <li>Back to layout: recreate or update the layout tree
+          <li>Send the results to the presentation layer to reflect what has changed
+      </article>
   </body>
 </html>
     
