@@ -12,6 +12,9 @@
     article > ul {
       font-size: 150%;
     }
+    li > ul:first-child {
+      margin-top: 10px;
+    }
     article {
       padding-top: 40px;
     }
@@ -152,7 +155,7 @@
           </li>
       </article>
       <article>
-        <h3>How browsers work: bird's-eye view</h3>
+        <h3>Bird's-eye view</h3>
         <svg width="720" height="600">
          <defs>
           <marker id="se_marker_start_svg_25" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5" markerHeight="5" refX="50" refY="50">
@@ -216,26 +219,23 @@
         <h3>Communication layer</h3>
         <ul>
           <li>Also known as the network layer
-          <li>The input is a URI, the output is usually a stream of bytes
+          <li>Input: a URI, output: a stream of bytes
           <li>Mostly consisting of
             <ul>
               <li>A URI parser
-              <li>Implementations of web protocols (HTTP, FTP, etc.)
+              <li>Protocol implementations (HTTP, FTP, etc.)
               <li>A local file system access layer
-              <li>Encryption facilities for secure communications
-              <li>In-memory and on-disk caches to make network access faster
+              <li>Encryption facilities
+              <li>Caches
           </li>
       </article>
       <article>
         <h3>Processing layer</h3>
         <ul>
-          <li>Most of the &quot;meet&quot; is here!
-          <li>Things like <em>HTML</em>, <em>CSS</em>, <em>Javascript</em>, etc. live here
-          <li>Input is a stream of bytes and some metadata, output is some form of
+          <li>Input: a stream of bytes and some metadata, output: some form of
               presentation (hint: <em>not</em> always a rendering on the screen)
-          <li>Typically asks the communications layer for some more URIs to be loaded
           <li>Another input source comes from the presentation layer
-              (e.g., mouse clicks, keyboard input, etc.)
+              (e.g., mouse &amp; keyboard input)
       </article>
       <article>
         <h3>A picture says&hellip;</h3>
@@ -422,19 +422,11 @@
       <article>
         <h3>Parsing HTML</h3>
         <ul>
-          <li>Keyword here: HTML5
+          <li>Buzzword here: HTML5
           <li>Everything is HTML5
           <li>No malformed documents
           <li>Handling older content: quirks mode
-          <li>HTML documents can point to other resources to load from the network
-            <ul>
-              <li>Images
-              <li>Scripts
-              <li>Stylesheets
-                <ul>
-                  <li>More stylesheets
-                </ul>
-              <li>etc.
+          <li>Linking to other resources
       </article>
       <article>
         <h3>Document Object Model (DOM)</h3>
@@ -443,35 +435,34 @@
           <li>Example:
         </ul>
         <pre>&lt;html&gt;&lt;body&gt;&lt;div&gt;hello&lt;/div&gt;world&lt;/body&gt;&lt;/html&gt;</pre>
-        <svg width="300" height="380">
+        <svg width="300" height="380" style="margin-top: -50px">
          <g>
-          <title>Layer 1</title>
           <g id="svg_17">
-           <ellipse ry="25" rx="59" id="svg_1" cy="45" cx="71" stroke="#000000" fill="#ffaaaa"/>
+           <ellipse ry="25" rx="59" id="svg_1" cy="45" cx="71" stroke="#000000" fill="#3399cc"/>
            <text xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_6" y="51" x="71" stroke-width="0" stroke="#000000" fill="#000000">html</text>
 
           </g>
           <g id="svg_18">
-           <ellipse id="svg_7" ry="25" rx="59" cy="103" cx="121" stroke="#000000" fill="#ffaaaa"/>
+           <ellipse id="svg_7" ry="25" rx="59" cy="103" cx="121" stroke="#000000" fill="#3399cc"/>
            <text id="svg_8" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" y="109" x="121" stroke-width="0" stroke="#000000" fill="#000000">head</text>
           </g>
           <g id="svg_19">
-           <ellipse id="svg_9" ry="25" rx="59" cy="162" cx="121" stroke="#000000" fill="#ffaaaa"/>
+           <ellipse id="svg_9" ry="25" rx="59" cy="162" cx="121" stroke="#000000" fill="#3399cc"/>
            <text id="svg_10" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" y="168" x="121" stroke-width="0" stroke="#000000" fill="#000000">body</text>
 
           </g>
           <g id="svg_20">
-           <ellipse id="svg_11" ry="25" rx="59" cy="221" cx="171" stroke="#000000" fill="#ffaaaa"/>
+           <ellipse id="svg_11" ry="25" rx="59" cy="221" cx="171" stroke="#000000" fill="#3399cc"/>
            <text id="svg_12" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" y="227" x="171" stroke-width="0" stroke="#000000" fill="#000000">div</text>
           </g>
           <g id="svg_21">
-           <ellipse id="svg_13" ry="25" rx="59" cy="336" cx="171" stroke="#000000" fill="#3f7f00"/>
+           <ellipse id="svg_13" ry="25" rx="59" cy="336" cx="171" stroke="#000000" fill="#cccccc"/>
            <text id="svg_14" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" y="342" x="171" stroke-width="0" stroke="#000000" fill="#000000">"world"</text>
 
           </g>
           <g id="svg_22">
-           <ellipse id="svg_15" ry="25" rx="59" cy="278" cx="231" stroke="#000000" fill="#3f7f00"/>
-           <text id="svg_16" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" y="284" x="231" stroke-width="0" stroke="#000000" fill="#000000">"world"</text>
+           <ellipse id="svg_15" ry="25" rx="59" cy="278" cx="231" stroke="#000000" fill="#cccccc"/>
+           <text id="svg_16" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" y="284" x="231" stroke-width="0" stroke="#000000" fill="#000000">"hello"</text>
           </g>
           <g id="svg_26">
            <line id="svg_24" y2="162.567267" x2="11.75" y1="45" x1="11.75" stroke="#b2b2b2" fill="none"/>
@@ -479,9 +470,10 @@
 
            <line id="svg_25" y2="163" x2="11.742272" y1="163" x1="62" stroke="#b2b2b2" fill="none"/>
           </g>
+          <line id="svg_32" y2="279.25" x2="111" y1="221.75" x1="111" stroke="#b2b2b2" fill="none"/>
           <line id="svg_28" y2="335.817682" x2="61.628906" y1="162.750003" x1="61.628906" stroke="#b2b2b2" fill="none"/>
           <line id="svg_29" y2="221.75" x2="61.621178" y1="221.75" x1="111.878906" stroke="#b2b2b2" fill="none"/>
-          <line id="svg_30" y2="279.25" x2="61.621283" y1="279.25" x1="171.878915" stroke="#b2b2b2" fill="none"/>
+          <line id="svg_30" y2="279.25" x2="111" y1="279.25" x1="171.878915" stroke="#b2b2b2" fill="none"/>
           <line id="svg_31" y2="336.5" x2="61.621178" y1="336.5" x1="111.878906" stroke="#b2b2b2" fill="none"/>
          </g>
         </svg>
