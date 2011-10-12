@@ -7,10 +7,10 @@
     <style type="text/css">
     
     article > h3:first-child {
-      font-size: 45px;
+      font-size: 50px;
     }
     article > ul {
-      font-size: 150%;
+      font-size: 180%;
     }
     li > ul:first-child {
       margin-top: 10px;
@@ -20,6 +20,9 @@
     }
     h3 {
       padding-top: 30px;
+    }
+    a.small {
+      font-size: 80%;
     }
 #logos {
     height: 269px;
@@ -136,15 +139,12 @@
         </div>
       </article>
       <article>
-        <h3>First things first</h3>
+        <h3>Browser engines</h3>
         <ul>
-          <li>Focused on things common between the browser engines
-            <ul>
-              <li>Gecko (used in Firefox, Thunderbird, etc.)
-              <li>WebKit (used in Chrome, Safari, etc.)
-              <li>Trident (used in IE, etc.)
-              <li>Presto (used in Opera, etc.)
-          </li>
+          <li>Gecko (used in Firefox, Thunderbird, etc.)
+          <li>WebKit (used in Chrome, Safari, etc.)
+          <li>Trident (used in IE, etc.)
+          <li>Presto (used in Opera, etc.)
       </article>
       <article>
         <h3>Bird's-eye view</h3>
@@ -208,26 +208,20 @@
         </svg>
       </article>
       <article>
-        <h3>Communication layer</h3>
+        <h3>Communication (network) layer</h3>
         <ul>
-          <li>Also known as the network layer
           <li>Input: a URI, output: a stream of bytes
-          <li>Mostly consisting of
-            <ul>
-              <li>A URI parser
-              <li>Protocol implementations (HTTP, FTP, etc.)
-              <li>A local file system access layer
-              <li>Encryption facilities
-              <li>Caches
-          </li>
+          <li>Protocol implementations
+          <li>Local file system access
+          <li>Encryption facilities
+          <li>Caches
       </article>
       <article>
         <h3>Processing layer</h3>
         <ul>
           <li>Input: a stream of bytes and some metadata, output: some form of
-              presentation (hint: <em>not</em> always a rendering on the screen)
-          <li>Another input source comes from the presentation layer
-              (e.g., mouse &amp; keyboard input)
+              presentation
+          <li>Event handling
       </article>
       <article>
         <h3>Parsing HTML</h3>
@@ -238,10 +232,9 @@
           <li>Handling older content: quirks mode
       </article>
       <article>
-        <h3>Document Object Model (DOM)</h3>
+        <h3><acronym title="Document Object Model">DOM</acronym> tree</h3>
         <ul>
           <li>HTML documents = Tree structures
-          <li>Example:
         </ul>
         <pre>&lt;html&gt;&lt;body&gt;&lt;div&gt;hello&lt;/div&gt;world&lt;/body&gt;&lt;/html&gt;</pre>
         <svg width="300" height="380" style="margin-top: -50px">
@@ -286,7 +279,7 @@
         </svg>
       </article>
       <article>
-        <h3>Interesting stuff in parsing HTML</h3>
+        <h3>More on parsing HTML</h3>
         <ul>
           <li>Incremental parsing
           <li>Speculative parsing
@@ -294,10 +287,7 @@
           <li>Sublanguages (SVG, MathML)
       </article>
       <article>
-        <h3>Cascading Style Sheets (CSS)</h3>
-        <ul>
-          <li>Common CSS properties: <code>color</code>, <code>font</code>, <code>border</code>, etc.
-          <li>Example:
+        <h3><acronym title="Cascading Style Sheets">CSS</acronym></h3>
             <pre class="lang-css"><span class="tag">div</span> {
   color: red;
 }
@@ -306,19 +296,21 @@
   font: serif;
   border: thick solid blue;
 }</pre>
-          </li>
+        <ul>
           <li>Result of parsing: a set of style rules
       </article>
       <article>
         <h3>Layout</h3>
         <ul>
-          <li>Determining the dimensions of the boxes
-          <li>Determining their presentation properties
+          <li>Determines
+            <ul>
+              <li>The dimensions of the boxes
+              <li>Their presentation properties
       </article>
       <article>
         <h3>Making sense of CSS</h3>
         <ul>
-          <li>Determining the style rules applying to DOM nodes
+          <li>Which style rules apply to DOM nodes
             <ul>
               <li>Selector matching
               <li>Style resolution
@@ -328,16 +320,13 @@
         <h3>Data structures for layout</h3>
         <ul>
           <li>Typical data structure: tree of boxes
-          <li>This tree is internal to the browser engine
-          <li>Demo time!
+          <li>Internal to the browser engine
       </article>
       <article>
-        <h3>More about the layout tree</h3>
+        <h3>Layout &amp; DOM trees</h3>
         <ul>
-          <li>Mapping between nodes in layout &amp; DOM trees
-          <li>Not all elements in the DOM affect the output
-          <li>Layout tree may not be similar to the DOM tree
-          <li>Once we finish building this tree, we know how the page will &quot;look&quot;
+          <li>Mapping between the nodes
+          <li>Not necessarily similar
       </article>
       <article>
         <h3>What about other resources?</h3>
@@ -350,8 +339,7 @@
       <article>
         <h3>Javascript</h3>
         <ul>
-          <li>JS is a full-blown programming language
-          <li>Different JS engines work in very different ways
+          <li>Variying implementations
           <ul>
             <li>Interpretation
             <li>JIT Compilation
@@ -367,7 +355,7 @@
           <li>Generate runnable code
             <ul>
               <li>Bytecode
-              <li>Native machine code (Just-in-time compilation)
+              <li>Native machine code (<acronym title="Just-in-time compilation">JIT</acronym>)
             </ul>
           <li>Run it
           <li>Modify the generated code if needed
@@ -375,14 +363,14 @@
       <article>
         <h3>JS meets DOM</h3>
         <ul>
-          <li>Querying information from the DOM tree
+          <li>Querying information
           <li>Modifying the DOM tree
-          <li>Calling DOM APIs on nodes in the tree
+          <li>Calling DOM APIs
       </article>
       <article>
         <h3>Dynamic modifications</h3>
         <ul>
-          <li>Changes to the layout tree as a result of
+          <li>Layout tree changes
             <ul>
               <li>Modifications to the DOM tree
               <li>Modifications to the styles
@@ -413,13 +401,12 @@
           <li>Backwards compatibility
       </article>
       <article>
-        <h3>Recent additions to web browsers</h3>
+        <h3>Recent trends</h3>
         <ul>
           <li>New features
             <ul>
-              <li>Audio and video (well, not so new now!)
               <li>WebGL: OpenGL 3D API for the web
-              <li>WebSockets: network sockets for the web
+              <li>WebSockets: network sockets
               <li>CSS Transitions and Animations
               <li>Web Workers: multi-threading
             </ul>
@@ -429,15 +416,12 @@
       <article>
         <h3>Current/future trends</h3>
         <ul>
-          <li>Improvements in the network layer (e.g., SPDY)
-          <li>New web APIs
+          <li>Improvements in the network layer
+          <li>New APIs
             <ul>
               <li>WebTelephony API
               <li>WebSMS API
               <li>Contacts API
-            </ul>
-          <li>New device APIs
-            <ul>
               <li>WebUSB
               <li>Camera API
             </ul>
@@ -451,7 +435,11 @@
           <li><a href="http://alteredqualia.com/three/examples/webgl_cars.html" target="_new">WebGL</a>
       </article>
       <article>
-        <h1>Questions?</h1>
+        <h3>Questions?</h3>
+        <h3 style="margin-top: 150px;">Contribute to open-source browser engines!</h3>
+        <ul>
+          <li>Mozilla: <a class="small" href="http://mzl.la/devintro">mzl.la/devintro</a>
+          <li>WebKit: <a class="small" href="http://webkit.org/coding/contributing.html">webkit.org/coding/contributing.html</a>
       </article>
   </body>
 </html>
