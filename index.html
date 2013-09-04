@@ -149,9 +149,10 @@
         <h3>Browser engines</h3>
         <ul>
           <li>Gecko (used in Firefox, Thunderbird, etc.)
-          <li>WebKit (used in Chrome, Safari, etc.)
+          <li>WebKit (used in Safari, Android Browser, etc.)
+          <li>Blink (used in Chrome, Opera, etc.)
           <li>Trident (used in IE, etc.)
-          <li>Presto (used in Opera, etc.)
+          <li>Presto (used in Opera, now deceased.)
       </article>
       <article>
         <h3>Bird's-eye view</h3>
@@ -235,13 +236,11 @@
         <ul>
           <li>Buzzword here: HTML5
           <li>Everything is HTML5
-          <li>No malformed documents
-          <li>Handling older content: quirks mode
       </article>
       <article>
         <h3><acronym title="Document Object Model">DOM</acronym> tree</h3>
         <ul>
-          <li>HTML documents = Tree structures
+          <li>HTML documents == Tree structures
         </ul>
         <pre>&lt;html&gt;&lt;body&gt;&lt;div&gt;hello&lt;/div&gt;world&lt;/body&gt;&lt;/html&gt;</pre>
         <svg width="300" height="380" style="margin-top: -50px">
@@ -290,8 +289,6 @@
         <ul>
           <li>Incremental parsing
           <li>Speculative parsing
-          <li>Representation in memory
-          <li>Sublanguages (SVG, MathML)
       </article>
       <article>
         <h3><acronym title="Cascading Style Sheets">CSS</acronym></h3>
@@ -311,8 +308,8 @@
         <ul>
           <li>Determines
             <ul>
-              <li>The dimensions of the boxes
-              <li>Their presentation properties
+              <li>The position and dimensions of the boxes
+              <li>Their presentational properties
       </article>
       <article>
         <h3>Making sense of CSS</h3>
@@ -328,6 +325,8 @@
         <ul>
           <li>Typical data structure: tree of boxes
           <li>Internal to the browser engine
+            <ul>
+              <li>Limited access from the outside world
       </article>
       <article>
         <h3>Layout &amp; DOM trees</h3>
@@ -393,6 +392,8 @@
               <li>Screen
               <li>Paper (printing)
               <li>Screen readers
+              <li>Speakers
+              <li>Network (yikes!)
             </ul>
           <li>Event handling
       </article>
@@ -408,45 +409,33 @@
           <li>Backwards compatibility
       </article>
       <article>
-        <h3>Recent trends</h3>
+        <h3>Recent/future trends</h3>
         <ul>
           <li>New features
             <ul>
               <li>WebGL: OpenGL 3D API for the web
-              <li>WebSockets: network sockets
-              <li>CSS Transitions and Animations
-              <li>Web Workers: multi-threading
+              <li>WebRTC: P2P communication
+              <li>WebSockets, Web Workers
+              <li>Web Components
             </ul>
           <li>Performance improvements
           <li>Tools for web developers
       </article>
       <article>
-        <h3>Current/future trends</h3>
+        <h3>Recent/future trends</h3>
         <ul>
-          <li>Improvements in the network layer
+          <li>SPDY
           <li>New APIs
             <ul>
               <li>WebTelephony API
               <li>WebSMS API
               <li>Contacts API
-              <li>WebUSB
               <li>Camera API
+              <li>Battery API
             </ul>
-          <li>Web Apps
-      </article>
-      <article>
-        <h3>Demo time!</h3>
-        <ul>
-          <li><a href="http://jslinux.org/" target="_new">jslinux</a>
-          <li><a href="http://syntensity.com/static/python.html" target="_new">python in a web page</a>
-          <li><a href="http://alteredqualia.com/three/examples/webgl_cars.html" target="_new">WebGL</a>
       </article>
       <article>
         <h3>Questions?</h3>
-        <h3 style="margin-top: 150px;">Contribute to open-source browser engines!</h3>
-        <ul>
-          <li>Mozilla: <a class="small" href="http://mzl.la/devintro">mzl.la/devintro</a>
-          <li>WebKit: <a class="small" href="http://webkit.org/coding/contributing.html">webkit.org/coding/contributing.html</a>
         <div style="margin-top: 50px;">Slides: <a href="http://mzl.la/hbw-talk">mzl.la/hbw-talk</a></div>
       </article>
   </body>
